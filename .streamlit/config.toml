@@ -1,0 +1,10 @@
+[theme]
+primaryColor = "#f63366"
+backgroundColor = "#EDE8D0"
+# backgroundImage = 'images/logo.png' # Non supporté nativement, voir la configuration CSS ci-dessous
+secondaryBackgroundColor = "#393939"
+textColor = "#1c0e04"
+font = "sans serif"
+
+[server]
+enableStaticServing = true
