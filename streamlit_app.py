@@ -180,10 +180,14 @@ with col2:
         recherche_effectuee = False  # Réinitialiser la variable si le bouton n'est pas cliqué
 
 # Affichage des résultats
+ 
 if recherche_effectuee:
     if id_input.isdigit():  # Vérifier si l'entrée est un nombre
         id_recherche = int(id_input)
         resultat = rechercher_id(data, id_recherche)
+        
+        # Remplacer les valeurs manquantes (None ou NaN) par '...plus'
+        resultat = resultat.fillna('...plus')
         
         if not resultat.empty:
             # Centrer le tableau
@@ -194,6 +198,7 @@ if recherche_effectuee:
             st.warning(f"لم يتم العثور على نتائج لـ {id_input} id رقم المدخل.")
     else:
         st.error("يرجى إدخال معرف صالح (رقمي).")
+
 
 # À propos de l'application
 st.markdown('<div class="centered-container">', unsafe_allow_html=True)
